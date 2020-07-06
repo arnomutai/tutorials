@@ -1,0 +1,30 @@
+{% extends 'main/base.html'%}
+{% load static%}
+  <link type="text/css" rel="stylesheet" href="{% static 'css/main.css'%}"  media="screen,projection"/>
+{% block content %}
+        <div class="row">
+          {% for tut, partone in part_ones.items%}
+ <div class="col s4 m4 ">
+   <div class="card" style="height: 19rem; " >
+              <a href="{{partone}}"  style="color:blue">
+            <div class="card-image waves-effect waves-block waves-light">
+
+                 <img class="activator" src="{{tut.tutorial_series_image.url}}" alt="">
+
+            </div>
+                         </a>
+
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4"><p>{{tut.tutorial_series}}</p><i class="material-icons right">more_vert</i></span>
+                <p><a href="{{partone}}">go to tutorial</a></p>
+            </div>
+
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4"><p>{{tut.tutorial_series}}</p><i class="material-icons right">close</i></span>
+                <p>{{tut.series_summary}}</p>
+            </div>
+   </div>
+    </div>
+            {% endfor %}
+  </div>
+{% endblock %}

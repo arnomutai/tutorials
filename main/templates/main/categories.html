@@ -1,0 +1,31 @@
+{% extends 'main/base.html'%}
+{% load static%}
+      <link type="text/css" rel="stylesheet" href="{% static 'css/main.css'%}"  media="screen,projection"/>
+{% block content %}
+        <div class="row">
+            {% for cat in categories%}
+    <div class="col s4 m4 ">
+          <div class="card" style="height: 19rem; " >
+              <a href="{{cat.category_slug}}"  style="color:blue">
+            <div class="card-image waves-effect waves-block waves-light">
+
+                 <img class="activator" src="{{cat.tutorial_cat_image.url}}" alt="">
+
+            </div>
+                         </a>
+
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4"><p>{{cat.tutorial_category}}</p><i class="material-icons right">more_vert</i></span>
+              <p><a href="{{cat.category_slug}}">go to series</a></p>
+            </div>
+
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4"><p>{{cat.tutorial_category}}</p><i class="material-icons right">close</i></span>
+               <p>{{cat.category_summary}}</p>
+            </div>
+    </div>
+
+    </div>
+            {% endfor %}
+  </div>
+{% endblock %}
