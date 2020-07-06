@@ -25,7 +25,7 @@ SECRET_KEY = '2%zn=a^d1(zcnmqom5pxeiiqh6iqnn55mu%m%*vx8$_jf8xr88'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ilovecode.herokuapp.com']
+ALLOWED_HOSTS = ['ilovecode.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
